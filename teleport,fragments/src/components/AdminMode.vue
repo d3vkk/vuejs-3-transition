@@ -1,6 +1,11 @@
 <template>
+  <!-- With the inbuilt fragments, you can have multiple root elements -->
+  <confirm-dialog
+    v-if="forceConfirm"
+    @cancel="cancelChange"
+    @confirm="confirmChange"
+  ></confirm-dialog>
   <li>
-    <confirm-dialog v-if="forceConfirm" @cancel="cancelChange" @confirm="confirmChange"></confirm-dialog>
     <h2>{{ modeName }}</h2>
     <button @click="deactivate">Deactivate</button>
   </li>
