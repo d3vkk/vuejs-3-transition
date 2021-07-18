@@ -1,9 +1,24 @@
 import {
   createApp
 } from 'vue';
-
+import {
+  createRouter
+} from 'vue-router';
 import App from './App.vue';
 
-// Add router!
+const app = createApp(App);
+const router = createRouter({
+  mode: 'history',
+  routes: [{
+      path: '/',
+      component: WelcomeScreen
+    },
+    {
+      path: '/users',
+      component: UsersList
+    },
+  ],
+});
 
-createApp(App).mount('#app');
+app.use(router);
+app.mount('#app');
