@@ -1,19 +1,26 @@
 <template>
-  <div>
-    <div class="backdrop"></div>
-    <dialog open>
-      <header>
-        <h2>Are you sure?</h2>
-      </header>
-      <section>
-        <p>Do you want to proceed with this operation?</p>
-      </section>
-      <menu>
-        <button @click="cancel">No</button>
-        <button @click="confirm">Yes</button>
-      </menu>
-    </dialog>
-  </div>
+  <!--
+    Teleport allows you to write semantically correct HTML e.g.
+    This teleport ensures that what is enclosed is rendered
+    directly in the body and not nested in other html tags
+-->
+  <teleport to="body">
+    <div>
+      <div class="backdrop"></div>
+      <dialog open>
+        <header>
+          <h2>Are you sure?</h2>
+        </header>
+        <section>
+          <p>Do you want to proceed with this operation?</p>
+        </section>
+        <menu>
+          <button @click="cancel">No</button>
+          <button @click="confirm">Yes</button>
+        </menu>
+      </dialog>
+    </div>
+  </teleport>
 </template>
 
 <script>
