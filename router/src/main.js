@@ -2,14 +2,17 @@ import {
   createApp
 } from 'vue';
 import {
-  createRouter
+  createRouter, createWebHistory
 } from 'vue-router';
 import App from './App.vue';
+import WelcomeScreen from './pages/WelcomeScreen.vue';
+import UsersList from './pages/UsersList.vue';
 
 const app = createApp(App);
 const router = createRouter({
-  mode: 'history',
-  routes: [{
+  history: createWebHistory(),
+  routes: [
+    {
       path: '/',
       component: WelcomeScreen
     },
