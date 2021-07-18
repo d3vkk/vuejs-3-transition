@@ -7,14 +7,15 @@ Vue.component('the-button', {
     },
 });
 
-new Vue({
-    el: '#app',
-    data: {
-        message: 'This works in Vue 2!',
+const app = Vue.createApp({
+    data() {
+        return {
+            message: 'This works in Vue 2!',
+        };
     },
     methods: {
         changeMessage() {
             this.message = 'Will it work in Vue 3?';
         },
     },
-});
+}).mount('#app');
