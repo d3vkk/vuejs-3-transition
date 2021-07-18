@@ -2,7 +2,8 @@ import {
   createApp
 } from 'vue';
 import {
-  createRouter, createWebHistory
+  createRouter,
+  createWebHistory
 } from 'vue-router';
 import App from './App.vue';
 import WelcomeScreen from './pages/WelcomeScreen.vue';
@@ -24,4 +25,6 @@ const router = createRouter({
 });
 
 app.use(router);
-app.mount('#app');
+router.isReady().then(() => {
+  app.mount('#app');
+});
