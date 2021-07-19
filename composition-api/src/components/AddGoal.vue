@@ -16,15 +16,26 @@ import { ref } from "vue";
 
 export default {
   emits: ["add-goal"],
-  setup() {
+  setup(_, context) {
     const enteredText = ref("");
     const invalidInput = ref(false);
+
+    function addGoal() {
+      invalidInput.value = false;
+      if (enteredText.value === "") {
+        invalidInput.value = true;
+        return;
+      }
+      context.emit("add-goal", enteredText.value);
+      enteredText.value = "";
+    }
 
     return {
       // If both the key and value are similar, then
       // on can be used
       enteredText,
       invalidInput,
+      addGoal
     };
   },
 };
