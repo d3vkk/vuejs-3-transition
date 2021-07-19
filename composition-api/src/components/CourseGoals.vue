@@ -15,7 +15,7 @@ export default {
     GoalsList,
     AddGoal,
   },
-  //Called in created() lifecycle
+  // The equivalent of created() lifecycle
   setup() {
     // ref replaces data option
     // .value has to be used when
