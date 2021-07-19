@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import GoalsList from "./GoalsList.vue";
 import AddGoal from "./AddGoal.vue";
 
@@ -18,11 +18,22 @@ export default {
   //Called in created() lifecycle
   setup() {
     // ref replaces data option
+    // .value has to be used when
+    // accessing the its value
     const goals = ref([]);
 
+    const filteredGoals = computed(function () {
+      // 'this' keyword is not used
+      return goals.value.filter(
+        (goal) => !goal.text.includes("Angular") && !goal.text.includes("React")
+      );
+    });
+
+    // For objects that are needed in the template
     return {
       // Data objects can be assigned different names
       // e.g. userGoals: goals
+      filteredGoals: filteredGoals,
     };
   },
 };
