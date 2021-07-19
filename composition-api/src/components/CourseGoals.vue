@@ -29,11 +29,20 @@ export default {
       );
     });
 
+    function addGoal(text) {
+      const newGoal = {
+        id: new Date().toISOString(),
+        text: text,
+      };
+      goals.value.push(newGoal);
+    }
+
     // For objects that are needed in the template
     return {
       // Data objects can be assigned different names
       // e.g. userGoals: goals
       filteredGoals: filteredGoals,
+      addGoal: addGoal,
     };
   },
 };
