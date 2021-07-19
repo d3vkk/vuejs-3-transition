@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import GoalsList from "./GoalsList.vue";
 import AddGoal from "./AddGoal.vue";
 
@@ -14,26 +15,15 @@ export default {
     GoalsList,
     AddGoal,
   },
-  data() {
+  //Called in created() lifecycle
+  setup() {
+    // ref replaces data option
+    const goals = ref([]);
+
     return {
-      goals: [],
+      // Data objects can be assigned different names
+      // e.g. userGoals: goals
     };
-  },
-  computed: {
-    filteredGoals() {
-      return this.goals.filter(
-        (goal) => !goal.text.includes("Angular") && !goal.text.includes("React")
-      );
-    },
-  },
-  methods: {
-    addGoal(text) {
-      const newGoal = {
-        id: new Date().toISOString(),
-        text: text,
-      };
-      this.goals.push(newGoal);
-    },
   },
 };
 </script>
