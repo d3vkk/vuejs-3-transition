@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 export default {
   emits: ["add-goal"],
@@ -30,12 +30,20 @@ export default {
       enteredText.value = "";
     }
 
+    // invalidInput is the dependency
+    // It doesn't need a .value
+    watch(invalidInput, function (val) {
+      if (val) {
+        console.log("Analytics: Invalid Input");
+      }
+    });
+
     return {
       // If both the key and value are similar, then
       // on can be used
       enteredText,
       invalidInput,
-      addGoal
+      addGoal,
     };
   },
 };
