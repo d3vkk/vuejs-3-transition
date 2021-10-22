@@ -13,4 +13,6 @@ Fork or clone this repo
 git clone https://github.com/d3vkk/vuejs-3-transition.git
 ```
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/d3vkk/vuejs-3-transition)
+
 © 2021-present Donald K • Under MIT License
