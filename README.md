@@ -8,11 +8,21 @@ For transitioning from Vuejs 2 to 3. Contains the changes and new features
 
 [Academind: Vue 3 Composition API Tutorial](https://www.youtube.com/watch?v=bwItFdPt-6M)
 
+## Contribution
+
+To contribute, [use this guide](https://github.com/d3vkk/open-source/blob/master/CONTRIBUTING.md)
+
+## Usage
+
+Star this repo for future reference
+
+Press `.` to open in browser-based Vscode
+
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/d3vkk/vuejs-3-transition)
+
 Fork or clone this repo
 ```
 git clone https://github.com/d3vkk/vuejs-3-transition.git
 ```
-
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/d3vkk/vuejs-3-transition)
 
 © 2021-present Donald K • Under MIT License
